@@ -1,133 +1,341 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محمد سيد | مطور واجهات أمامية</title>
+  <title>Mohamed Sayed | Professional Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0b0b0b;
+      --text: #f5f5f5;
+      --muted: #c7c7c7;
+      --card-bg: #121212;
+      --accent: #2c2cbf;
+      --accent-2: #0f005b;
+      --hero-start: #000b16;
+      --hero-end: #001142;
+      --nav-bg: #000000;
+      --btn-radius: 14px;
+      --outline: rgba(255, 255, 255, 0.12);
+      --shadow-hero: 0 24px 72px rgba(0, 0, 0, 0.6);
+      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45);
+      --shadow-nav: 0 10px 26px rgba(0, 0, 0, 0.35);
+      --pill-shadow: 0 10px 24px rgba(44, 71, 191, 0.45);
+      --hero-content-bg: rgba(0, 0, 0, 0.35);
+      --toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      --nav-btn-start: #2c2cbf;
+      --nav-btn-end: #0f005b;
+      --icon-sun: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='5'/><path d='M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12'/></svg>";
+      --icon-moon: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z'/></svg>";
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --text: #000000;
+      --muted: #4f4f4f;
+      --card-bg: #ffffff;
+      --accent: #2c2cbf;
+      --accent-2: #0f005b;
+      --hero-start: #ffffff;
+      --hero-end: #ffffff;
+      --nav-bg: #ffffff;
+      --outline: rgba(0, 0, 0, 0.08);
+      --shadow-hero: 0 24px 72px rgba(75, 0, 130, 0.22);
+      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.15);
+      --shadow-nav: 0 10px 26px rgba(0, 0, 0, 0.12);
+      --pill-shadow: 0 10px 24px rgba(0, 7, 130, 0.28);
+      --hero-content-bg: rgba(255, 255, 255, 0.88);
+      --toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      --nav-btn-start: #4b0082;
+      --nav-btn-end: #2f0060;
+      --icon-sun: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='5'/><path d='M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12'/></svg>";
+      --icon-moon: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z'/></svg>";
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Cairo', serif;
-      background-color: #f8f9fa;
-      direction:rtl;
+      background-color: var(--bg);
+      color: var(--text);
+      direction: rtl;
+      padding-top: 72px;
     }
+
+    .navbar {
+      background-color: var(--nav-bg) !important;
+      box-shadow: var(--shadow-nav);
+    }
+
+    .navbar .navbar-brand {
+      color: var(--text) !important;
+    }
+
+    .navbar .nav-link {
+      color: var(--text) !important;
+    }
+
+    .navbar .nav-link.btn-nav {
+      background-color: #000000;
+      color: #fff !important;
+      padding: 8px 14px;
+      margin: 4px 6px;
+      border: 1px solid var(--outline);
+      box-shadow: inset 0px 0px 16px 7px rgba(44, 71, 191, 0.45);
+    }
+
+    .navbar .nav-link.btn-nav:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .navbar-toggler {
+      border-color: var(--text);
+    }
+
+    .navbar-toggler-icon {
+      background-image: var(--toggler-icon);
+    }
+
+    .navbar .nav-link {
+      padding: 8px 12px;
+      border-radius: 8px;
+
+    }
+
+    .navbar .nav-link:focus {
+      outline: 2px solid var(--outline);
+    }
+
     .hero {
-      background: #000;
-      color: white;
-      padding: 20px 0;
+      background: linear-gradient(to bottom, var(--hero-start), var(--hero-end));
+      padding: 96px 24px;
+      border-radius: 28px;
+      width: 94%;
+      margin: 3%;
+      box-shadow: inset 0px 0px 20px 7px rgb(88 88 118);
       text-align: center;
-      width:96%; 
-      margin:2%;
-      border-radius:20px;
     }
-    .hero:hover{
-      transform:rotatex(360deg);
-      transition: 0.9s; 
+
+    .hero-content {
+      display: contents;
     }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p.lead {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .hero .cta {
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+      border: none;
+      border-radius: var(--btn-radius);
+      padding: 10px 16px;
+      box-shadow: 0 8px 20px rgba(49, 44, 191, 0.35);
+    }
+
+    .btn-outline-light {
+      border-color: var(--text);
+      color: var(--text);
+      border-radius: var(--btn-radius);
+      padding: 10px 16px;
+      box-shadow: 0 0 0 2px var(--outline);
+    }
+
+    .btn-outline-light:hover {
+      background-color: var(--text);
+      color: var(--bg);
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--outline);
+      color: var(--text);
+      background: transparent;
+      box-shadow: var(--shadow-nav);
+    }
+
+    .theme-toggle:hover {
+      opacity: 0.9;
+    }
+
     .section {
-      padding: 60px 0;
-      margin:5%;
-      box-shadow:0 0 10px gray;
-      width :90%;
-      border-radius:5px;
-      transition: 0.3s;  
+      width: 94%;
+      margin: 3%;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 48px 20px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--outline);
     }
-     .section:hover{
-      transform: scale(1.01);
-     }
-    .lang{
-        background-color:#000;
-        color:#fff;
-        padding:3%;
-    }
-    .card{transition: 0.3s;}
-    .card:hover {
-     box-shadow: 0 0 15px rgba(0,0,0,0.15);
-     transform: scale(1.07); 
-    }
-    footer {
-      background-color: #000;
-      color: white;
-      padding: 20px 0;
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 28px;
       text-align: center;
+    }
+
+    .skill-group {
+      background: var(--card-bg);
+      border: 1px solid var(--outline);
+      box-shadow: var(--shadow-card);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .pill {
+      background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+      color: #fff;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin: 4px 6px;
+      box-shadow: var(--pill-shadow);
+      border: 1px solid rgb(0 0 0);
+    }
+
+    .row {
+      text-align: center;
+    }
+
+    .card {
+      border: none;
+      border-radius: 16px;
+      box-shadow: var(--shadow-card);
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--outline);
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      transition: 0.25s;
+    }
+
+    .card .card-title {
+      font-size: 1.1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 18px 0;
+    }
+
+    [data-theme="light"] .section {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .jj {
+      width: -webkit-fill-available;
     }
   </style>
 </head>
 
-<body>
-  <!-- القسم الرئيسي -->
-  <div class="hero">
-    <h1>محمد سيد</h1>
-    <hr>
-    <p class="lead">مطور واجهات أمامية | Frontend Develober</p>
-    <p> HTML, CSS, JavaScript, Bootstrap</p>
-    <a href="#projects" class="btn btn-light mt-3">مشاهدة الأعمال</a>
-  </div>
+<body data-theme="light">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mohamed Sayed</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <span class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link btn-nav" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link btn-nav" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link btn-nav" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link btn-nav" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link btn-nav" href="#contact">Contact</a></li>
+        </span>
+        <div class="ms-3">
+          <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-  <!-- نبذة عني -->
-  <section class="section container text-center">
-    <h2 class="mb-4">من أنا؟</h2>
-    <p>أنا محمد سيد
-    <br>
-     خريج الجزيرة اكاديمي لنظم المعلومات الإدارية 
-     <br>
-     أهوى البرمجة وتصميم الواجهات، أستخدم
-     </p><p class="lang">"HTML , CSS , JavaScript , Bootstrap"</p>
-     <p>لصناعة مواقع جميلة وسريعة الاستجابة.</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Mohamed Sayed</h1>
+      <p class="lead">Full‑Stack Web Developer | Frontend, Backend, Databases</p>
+      <div class="cta d-flex justify-content-center gap-2 flex-wrap">
+        <a href="#projects" class="btn btn-outline-light">View Projects</a>
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="container">
+      <p class="text-center">I’m Mohamed Sayed, a full‑stack web developer building modern frontends and robust backends
+        with database integrations. I focus on performance, UX, and responsive, consistent design.</p>
+      <div class="divider"></div>
+      <div class="text-center">
+        <span class="pill">Frontend</span>
+        <span class="pill">Backend</span>
+        <span class="pill">APIs</span>
+        <span class="pill">Databases</span>
+        <span class="pill">Performance</span>
+      </div>
+    </div>
   </section>
 
-  <!-- المشاريع -->
-  <section id="projects" class="section bg-light">
+  <section id="services" class="section">
+    <h2 class="section-title">Services</h2>
     <div class="container">
-      <h2 class="text-center mb-5">بعض من أعمالي</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card">
+          <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">موقع متجر إلكتروني</h5>
-              <p class="card-text">تصميم متجر باستخدام 
-              <br>
-              HTML ,CSS ,JavaScript ,bootstrap
-              <br>
-               مع سلة مشتريات.</p>
-              <a href="https://mobilia-place.vercel.app" class="btn btn-dark">عرض المشروع</a>
+              <h5 class="card-title">Frontend Development</h5>
+              <p class="muted">Responsive, modern UIs with React, JavaScript, TypeScript, and Bootstrap.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card">
+          <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">موقع لرفع الشيتات
-              <br>
-               (مشروع التخرج الخاص بالكلية)
-               </h5>
-              <p class="card-text">تصميم موقع يمكن الطلاب من رفع الشيتات وتصل للدكتور بصورك بسيطك عن طريق ادخال ال ID  
-              <br>
-              بإستخدام
-              <br>
-              HTML ,CSS ,JavaScript ,bootstrap
-              <br>
-             </P>
-              <a href="https://mimoss0.github.io/Egi-project/" class="btn btn-dark">عرض المشروع</a>
+              <h5 class="card-title">Backend & APIs</h5>
+              <p class="muted">Designing and building REST APIs with Node.js and Python following security best
+                practices.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card">
+          <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">صفحة هبوط لمطعم</h5>
-              <p class="card-text">تصميم واجهة جذابة ومتجاوبة باستخدام Bootstrap.</p>
-              <a href="https://mimoss0.github.io/Restaurant-Landing-Page/" class="btn btn-dark">عرض المشروع</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">آلة حاسبة بسيطة</h5>
-              <p class="card-text">آلة حاسبة باستخدام JavaScript وواجهة بسيطة.</p>
-              <a href="https://mimoss0.github.io/Calculator/" class="btn btn-dark">عرض المشروع</a>
+              <h5 class="card-title">Databases & Integration</h5>
+              <p class="muted">Database design and integrations using SQL, PostgreSQL, MySQL, and SQLite.</p>
             </div>
           </div>
         </div>
@@ -135,21 +343,181 @@
     </div>
   </section>
 
-  <!-- تواصل معي -->
-  <section class="section container text-center">
-    <h2 class="mb-4">تواصل معي</h2>
-    <p>يمكنك التواصل معي عبر البريد الإلكتروني
-    <br>
-     أو من خلال حساباتي على المنصات التالية:</p>
-    <a href="mailto:youremail@example.com" class="btn btn-outline-dark m-2">البريد الإلكتروني</a>
-    <a href="https://github.com/yourusername" target="_blank" class="btn btn-outline-dark m-2">GitHub</a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-outline-dark m-2">LinkedIn</a>
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="skill-group">
+            <h6 class="mb-3">Frontend</h6>
+            <div>
+              <span class="pill jj">React</span>
+              <span class="pill jj">HTML</span>
+              <span class="pill jj">CSS</span>
+              <span class="pill jj">Sass</span>
+              <span class="pill jj">JavaScript</span>
+              <span class="pill jj">TypeScript</span>
+              <span class="pill jj">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="skill-group">
+            <h6 class="mb-3">Backend</h6>
+            <div>
+              <span class="pill jj">Python</span>
+              <span class="pill jj">Node.js</span>
+              <span class="pill jj">REST APIs</span>
+              <span class="pill jj">PHP</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="skill-group">
+            <h6 class="mb-3">Databases</h6>
+            <div>
+              <span class="pill jj">SQL</span>
+              <span class="pill jj">PostgreSQL</span>
+              <span class="pill jj">MySQL</span>
+              <span class="pill jj">SQLite</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="skill-group">
+            <h6 class="mb-3">Tools</h6>
+            <div>
+              <span class="pill jj">Git</span>
+              <span class="pill jj">GitHub</span>
+              <span class="pill jj">Docker</span>
+              <span class="pill jj">NPM</span>
+              <span class="pill jj">Webpack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  
-  <footer>
-    <p>رقم الهاتف للتواصل : 01066468046</p>
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Project 234</h5>
+              <p class="muted">Modern responsive UI built with HTML, CSS and JavaScript; optimized layout and
+                performance.</p>
+              <a href="https://mimoss0.github.io/project-234-/" target="_blank" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Tech Gadgets</h5>
+              <p class="muted">Responsive tech catalogue/blog using HTML/CSS and JS, presenting gadgets and articles.
+              </p>
+              <a href="https://tech-gadgets.kesug.com/" target="_blank" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">FirstMedical Store</h5>
+              <p class="muted">Medical e‑commerce storefront with product sections and CTAs built with HTML, CSS,
+                JavaScript.</p>
+              <a href="https://firstmedical.store/" target="_blank" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">E‑commerce Store</h5>
+              <p class="muted">Furniture store demo with cart flow; stack: HTML, CSS, JavaScript, Bootstrap; deployed on
+                Vercel.</p>
+              <a href="https://mobilia-place.vercel.app" target="_blank" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Sheets Upload Portal</h5>
+              <p class="muted">Student portal to upload sheets via ID with client‑side validation; built with HTML, CSS,
+                JS, Bootstrap.</p>
+              <a href="https://mimoss0.github.io/Egi-project/" target="_blank" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Restaurant Landing Page</h5>
+              <p class="muted">Marketing landing page with menu sections and responsive grid using Bootstrap components.
+              </p>
+              <a href="https://mimoss0.github.io/Restaurant-Landing-Page/" target="_blank" class="btn btn-primary">View
+                Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Calculator</h5>
+              <p class="muted">Vanilla JS calculator supporting basic arithmetic and keyboard input with a clean UI.</p>
+              <a href="https://mimoss0.github.io/Calculator/" target="_blank" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="container text-center">
+      <p class="muted">You can reach me via:</p>
+      <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+        <a href="mailto:email@domain.com" class="btn btn-outline-light">Email</a>
+        <a href="https://github.com/mimoss0" target="_blank" class="btn btn-outline-light">GitHub</a>
+        <a href="https://linkedin.com/in/username" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+      </div>
+      <div>Phone: 01066468046</div>
+    </div>
+  </section>
+
+  <footer class="muted">
+    All rights reserved © Mohamed Sayed
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var body = document.body;
+      var toggle = document.getElementById('themeToggle');
+      var styles = getComputedStyle(body);
+      var sunSVG = styles.getPropertyValue('--icon-sun').trim().replace(/^"|"$/g, '');
+      var moonSVG = styles.getPropertyValue('--icon-moon').trim().replace(/^"|"$/g, '');
+      var current = saved === 'dark' ? 'dark' : 'light';
+      body.setAttribute('data-theme', current);
+      toggle.innerHTML = current === 'light' ? sunSVG : moonSVG;
+      toggle.addEventListener('click', function () {
+        var next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        var s = getComputedStyle(body);
+        var sun = s.getPropertyValue('--icon-sun').trim().replace(/^"|"$/g, '');
+        var moon = s.getPropertyValue('--icon-moon').trim().replace(/^"|"$/g, '');
+        this.innerHTML = next === 'light' ? sun : moon;
+      });
+    })();
+  </script>
 </body>
+
 </html>
