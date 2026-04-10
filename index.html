@@ -1,57 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Sayed | Professional Portfolio</title>
+  <title data-i18n="title">Mohamed Sayed | Full-Stack Developer Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0b0b;
-      --text: #f5f5f5;
-      --muted: #c7c7c7;
-      --card-bg: #121212;
-      --accent: #2c2cbf;
-      --accent-2: #0f005b;
-      --hero-start: #000b16;
-      --hero-end: #001142;
-      --nav-bg: #000000;
-      --btn-radius: 14px;
-      --outline: rgba(255, 255, 255, 0.12);
-      --shadow-hero: 0 24px 72px rgba(0, 0, 0, 0.6);
-      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45);
-      --shadow-nav: 0 10px 26px rgba(0, 0, 0, 0.35);
-      --pill-shadow: 0 10px 24px rgba(44, 71, 191, 0.45);
-      --hero-content-bg: rgba(0, 0, 0, 0.35);
-      --toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      --nav-btn-start: #2c2cbf;
-      --nav-btn-end: #0f005b;
-      --icon-sun: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='5'/><path d='M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12'/></svg>";
-      --icon-moon: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z'/></svg>";
+      /* Base Variables (Dark Mode Default) */
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-header: #f0f6fc;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-dark: #1f6feb;
+      --success: #238636;
+      --radius: 8px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --transition: all 0.3s ease;
+      --hero-gradient: radial-gradient(circle at top, rgba(31, 111, 235, 0.15) 0%, transparent 70%);
     }
 
     [data-theme="light"] {
       --bg: #ffffff;
-      --text: #000000;
-      --muted: #4f4f4f;
-      --card-bg: #ffffff;
-      --accent: #2c2cbf;
-      --accent-2: #0f005b;
-      --hero-start: #ffffff;
-      --hero-end: #ffffff;
-      --nav-bg: #ffffff;
-      --outline: rgba(0, 0, 0, 0.08);
-      --shadow-hero: 0 24px 72px rgba(75, 0, 130, 0.22);
-      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.15);
-      --shadow-nav: 0 10px 26px rgba(0, 0, 0, 0.12);
-      --pill-shadow: 0 10px 24px rgba(0, 7, 130, 0.28);
-      --hero-content-bg: rgba(255, 255, 255, 0.88);
-      --toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      --nav-btn-start: #4b0082;
-      --nav-btn-end: #2f0060;
-      --icon-sun: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='5'/><path d='M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12'/></svg>";
-      --icon-moon: "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z'/></svg>";
+      --card-bg: #f6f8fa;
+      --border: #d0d7de;
+      --text: #24292f;
+      --text-header: #1f2328;
+      --muted: #57606a;
+      --accent: #0969da;
+      --accent-dark: #0550ae;
+      --shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+      --hero-gradient: radial-gradient(circle at top, rgba(9, 105, 218, 0.05) 0%, transparent 70%);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html {
@@ -59,283 +51,490 @@
     }
 
     body {
-      font-family: 'Cairo', serif;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      direction: rtl;
-      padding-top: 72px;
+      line-height: 1.6;
+      margin: 0;
+      padding-top: 80px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    html[lang="ar"] body {
+      font-family: 'Cairo', sans-serif;
+    }
+
+    /* Navbar */
     .navbar {
-      background-color: var(--nav-bg) !important;
-      box-shadow: var(--shadow-nav);
+      background-color: var(--bg) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      transition: var(--transition);
     }
 
-    .navbar .navbar-brand {
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--text-header) !important;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
       color: var(--text) !important;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: var(--transition);
     }
 
-    .navbar .nav-link {
-      color: var(--text) !important;
-    }
-
-    .navbar .nav-link.btn-nav {
-      background-color: #000000;
-      color: #fff !important;
-      padding: 8px 14px;
-      margin: 4px 6px;
-      border: 1px solid var(--outline);
-      box-shadow: inset 0px 0px 16px 7px rgba(44, 71, 191, 0.45);
-    }
-
-    .navbar .nav-link.btn-nav:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
+    .nav-link:hover {
+      color: var(--accent) !important;
     }
 
     .navbar-toggler {
-      border-color: var(--text);
+      border: 1px solid var(--border);
     }
 
     .navbar-toggler-icon {
-      background-image: var(--toggler-icon);
+      filter: var(--toggler-filter, invert(1));
     }
 
-    .navbar .nav-link {
-      padding: 8px 12px;
-      border-radius: 8px;
-
+    [data-theme="light"] .navbar-toggler-icon {
+      filter: none;
     }
 
-    .navbar .nav-link:focus {
-      outline: 2px solid var(--outline);
+    /* Controls */
+    .control-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 5px 10px;
+      border-radius: var(--radius);
+      margin-left: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    .control-btn:hover {
+      background-color: var(--card-bg);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Hero Section */
     .hero {
-      background: linear-gradient(to bottom, var(--hero-start), var(--hero-end));
-      padding: 96px 24px;
-      border-radius: 28px;
-      width: 94%;
-      margin: 3%;
-      box-shadow: inset 0px 0px 20px 7px rgb(88 88 118);
+      padding: 100px 0;
       text-align: center;
-    }
-
-    .hero-content {
-      display: contents;
+      background: var(--hero-gradient);
     }
 
     .hero h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--text-header);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
 
-    .hero p.lead {
-      font-size: 1.2rem;
+    .hero p {
+      font-size: 1.25rem;
       color: var(--muted);
-    }
-
-    .hero .cta {
-      margin-top: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
     }
 
     .btn-primary {
-      background: linear-gradient(to bottom, var(--accent), var(--accent-2));
-      border: none;
-      border-radius: var(--btn-radius);
-      padding: 10px 16px;
-      box-shadow: 0 8px 20px rgba(49, 44, 191, 0.35);
+      background-color: var(--accent-dark);
+      border-color: var(--accent-dark);
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+      color: #fff;
     }
 
     .btn-outline-light {
-      border-color: var(--text);
-      color: var(--text);
-      border-radius: var(--btn-radius);
-      padding: 10px 16px;
-      box-shadow: 0 0 0 2px var(--outline);
+      border-color: var(--border);
+      color: var(--text-header);
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: var(--radius);
+      transition: var(--transition);
     }
 
     .btn-outline-light:hover {
-      background-color: var(--text);
-      color: var(--bg);
+      background-color: var(--border);
+      color: var(--text-header);
+      transform: translateY(-2px);
     }
 
-    .theme-toggle {
-      width: 38px;
-      height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 1px solid var(--outline);
-      color: var(--text);
-      background: transparent;
-      box-shadow: var(--shadow-nav);
-    }
-
-    .theme-toggle:hover {
-      opacity: 0.9;
-    }
-
+    /* Section Styles */
     .section {
-      width: 94%;
-      margin: 3%;
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 48px 20px;
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--outline);
+      padding: 80px 0;
     }
 
     .section-title {
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 28px;
-      text-align: center;
-    }
-
-    .skill-group {
-      background: var(--card-bg);
-      border: 1px solid var(--outline);
-      box-shadow: var(--shadow-card);
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .pill {
-      background: linear-gradient(to bottom, var(--accent), var(--accent-2));
-      color: #fff;
+      color: var(--text-header);
+      margin-bottom: 50px;
+      position: relative;
       display: inline-block;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      margin: 4px 6px;
-      box-shadow: var(--pill-shadow);
-      border: 1px solid rgb(0 0 0);
     }
 
-    .row {
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    html[lang="ar"] .section-title::after {
+      left: auto;
+      right: 0;
+    }
+
+    .section-title-centered {
       text-align: center;
+      width: 100%;
     }
 
+    .section-title-centered::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    html[lang="ar"] .section-title-centered::after {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    /* Cards */
     .card {
-      border: none;
-      border-radius: 16px;
-      box-shadow: var(--shadow-card);
-      background: var(--card-bg);
-      color: var(--text);
-      border: 1px solid var(--outline);
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: var(--transition);
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+      opacity: 0.9;
+      transition: var(--transition);
+    }
+
+    .card:hover .card-img-top {
+      opacity: 1;
     }
 
     .card:hover {
-      transform: translateY(-2px);
-      transition: 0.25s;
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
     }
 
-    .card .card-title {
-      font-size: 1.1rem;
+    .card-body {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
-    .muted {
+    .card-title {
+      color: var(--text-header);
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .card-text {
       color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
     }
 
+    .card-tags {
+      margin-top: auto;
+      margin-bottom: 15px;
+    }
+
+    .card-footer {
+      background: transparent;
+      border-top: 1px solid var(--border);
+      padding: 20px 25px;
+    }
+
+    /* Featured Badge */
+    .badge-featured {
+      background-color: rgba(88, 166, 255, 0.15);
+      color: var(--accent);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    /* Skills */
+    .skill-group {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 12px;
+      height: 100%;
+    }
+
+    .skill-group h6 {
+      color: var(--text-header);
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      background-color: rgba(48, 54, 61, 0.5);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin: 4px;
+      display: inline-block;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    [data-theme="light"] .pill {
+      background-color: #f1f3f5;
+      color: #24292f;
+    }
+
+    .pill:hover {
+      background-color: var(--border);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Experience Timeline */
+    .experience-item {
+      padding-left: 30px;
+      border-left: 2px solid var(--border);
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    html[lang="ar"] .experience-item {
+      padding-left: 0;
+      padding-right: 30px;
+      border-left: none;
+      border-right: 2px solid var(--border);
+    }
+
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      border: 4px solid var(--bg);
+    }
+
+    html[lang="ar"] .experience-item::before {
+      left: auto;
+      right: -9px;
+    }
+
+    .exp-date {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .exp-title {
+      font-weight: 700;
+      color: var(--text-header);
+      font-size: 1.25rem;
+    }
+
+    .exp-company {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
     footer {
-      padding: 24px;
+      padding: 50px 0;
+      border-top: 1px solid var(--border);
       text-align: center;
+      background-color: var(--bg);
     }
 
-    .divider {
-      height: 1px;
-      background: rgba(255, 255, 255, 0.08);
-      margin: 18px 0;
+    footer p {
+      color: var(--muted);
+      margin: 0;
     }
 
-    [data-theme="light"] .section {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .jj {
-      width: -webkit-fill-available;
+    .animate-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section {
+        padding: 50px 0;
+      }
+
+      .navbar-nav {
+        padding: 1rem 0;
+      }
+
+      .control-btn {
+        margin: 5px;
+      }
     }
   </style>
 </head>
 
-<body data-theme="light">
+<body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Mohamed Sayed</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="container">
+      <a class="navbar-brand" href="#" data-i18n="nav-brand">Mohamed Sayed</a>
+      <div class="d-flex align-items-center order-lg-3">
+        <button class="control-btn" id="lang-toggle" title="Toggle Language">
+          <i class="bi bi-globe"></i>
+        </button>
+        <button class="control-btn" id="theme-toggle" title="Toggle Theme">
+          <i class="bi bi-moon-stars" id="theme-icon"></i>
+        </button>
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="nav">
-        <span class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link btn-nav" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link btn-nav" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link btn-nav" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link btn-nav" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link btn-nav" href="#contact">Contact</a></li>
-        </span>
-        <div class="ms-3">
-          <button id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع"></button>
-        </div>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav-about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav-experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav-skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav-projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav-contact">Contact</a></li>
+        </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Hero -->
   <header class="hero">
-    <div class="hero-content">
-      <h1>Mohamed Sayed</h1>
-      <p class="lead">Full‑Stack Web Developer | Frontend, Backend, Databases</p>
-      <div class="cta d-flex justify-content-center gap-2 flex-wrap">
-        <a href="#projects" class="btn btn-outline-light">View Projects</a>
-        <a href="#contact" class="btn btn-primary">Contact Me</a>
+    <div class="container">
+      <h1 class="animate-in" data-i18n="hero-name">Mohamed Sayed</h1>
+      <p class="animate-in" style="animation-delay: 0.2s;" data-i18n="hero-title">Full‑Stack Web Developer specializing
+        in high-performance
+        SaaS applications and modern user interfaces.</p>
+      <div class="cta d-flex justify-content-center gap-3 flex-wrap animate-in" style="animation-delay: 0.4s;">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero-btn-primary">Featured Projects</a>
+        <a href="#contact" class="btn btn-outline-light" data-i18n="hero-btn-outline">Get In Touch</a>
       </div>
     </div>
   </header>
 
+  <!-- About -->
   <section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
     <div class="container">
-      <p class="text-center">I’m Mohamed Sayed, a full‑stack web developer building modern frontends and robust backends
-        with database integrations. I focus on performance, UX, and responsive, consistent design.</p>
-      <div class="divider"></div>
-      <div class="text-center">
-        <span class="pill">Frontend</span>
-        <span class="pill">Backend</span>
-        <span class="pill">APIs</span>
-        <span class="pill">Databases</span>
-        <span class="pill">Performance</span>
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="section-title section-title-centered" data-i18n="about-title">About Me</h2>
+          <p class="lead mb-4" data-i18n="about-text">I’m a dedicated full‑stack web developer building modern frontends
+            and robust backends
+            with advanced database integrations. I focus on performance, UX, and delivering scalable SaaS solutions with
+            clean, responsive designs.</p>
+          <div class="d-flex justify-content-center flex-wrap gap-2">
+            <span class="pill" data-i18n="about-tag-1">Performance Oriented</span>
+            <span class="pill" data-i18n="about-tag-2">Scalable SaaS</span>
+            <span class="pill" data-i18n="about-tag-3">Clean UI/UX</span>
+            <span class="pill" data-i18n="about-tag-4">API First</span>
+            <span class="pill" data-i18n="about-tag-5">Security Focused</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="section">
-    <h2 class="section-title">Services</h2>
+  <!-- Services -->
+  <section id="services" class="section" style="background-color: rgba(22, 27, 34, 0.3);">
     <div class="container">
+      <h2 class="section-title section-title-centered" data-i18n="services-title">Core Services</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Frontend Development</h5>
-              <p class="muted">Responsive, modern UIs with React, JavaScript, TypeScript, and Bootstrap.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title" data-i18n="service-1-title">Frontend Mastery</h5>
+              <p class="card-text" data-i18n="service-1-text">Developing responsive, high-performance UIs using React,
+                TypeScript, and modern CSS
+                frameworks with smooth animations.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Backend & APIs</h5>
-              <p class="muted">Designing and building REST APIs with Node.js and Python following security best
-                practices.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title" data-i18n="service-2-title">Backend Architecture</h5>
+              <p class="card-text" data-i18n="service-2-text">Building robust RESTful APIs and microservices with
+                Node.js and Python, ensuring
+                security and scalability.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Databases & Integration</h5>
-              <p class="muted">Database design and integrations using SQL, PostgreSQL, MySQL, and SQLite.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title" data-i18n="service-3-title">SaaS & ERP Solutions</h5>
+              <p class="card-text" data-i18n="service-3-text">Designing comprehensive management systems with complex
+                workflows, real-time
+                reporting, and intuitive dashboards.</p>
             </div>
           </div>
         </div>
@@ -343,55 +542,85 @@
     </div>
   </section>
 
-  <section id="skills" class="section">
-    <h2 class="section-title">Skills</h2>
+  <!-- Experience Section -->
+  <section id="experience" class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 mb-4">
+      <h2 class="section-title" data-i18n="exp-main-title">Professional Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="experience-item">
+            <div class="exp-date" data-i18n="exp-1-date">Ongoing</div>
+            <div class="exp-title" data-i18n="exp-1-title">Freelance Web Developer</div>
+            <div class="exp-company" data-i18n="exp-1-company">Self-Employed</div>
+            <p data-i18n="exp-1-text">Developing custom web solutions for diverse clients, focusing on e-commerce,
+              management systems, and
+              landing pages. Implementing modern tech stacks to deliver fast, SEO-friendly, and responsive applications.
+            </p>
+          </div>
+          <div class="experience-item">
+            <div class="exp-date" data-i18n="exp-2-date">2023 - 2024</div>
+            <div class="exp-title" data-i18n="exp-2-title">Graduation Project: Sheets Upload Portal</div>
+            <div class="exp-company" data-i18n="exp-2-company">University Project</div>
+            <p data-i18n="exp-2-text">Built a high-performance student portal for sheet submissions with advanced
+              client-side validation and
+              secure file handling. Optimized the layout for mobile and desktop users using Bootstrap and Vanilla
+              JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section" style="background-color: rgba(22, 27, 34, 0.3);">
+    <div class="container">
+      <h2 class="section-title section-title-centered" data-i18n="skills-title">Technical Expertise</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
           <div class="skill-group">
-            <h6 class="mb-3">Frontend</h6>
-            <div>
-              <span class="pill jj">React</span>
-              <span class="pill jj">HTML</span>
-              <span class="pill jj">CSS</span>
-              <span class="pill jj">Sass</span>
-              <span class="pill jj">JavaScript</span>
-              <span class="pill jj">TypeScript</span>
-              <span class="pill jj">Bootstrap</span>
+            <h6 data-i18n="skills-cat-1">Frontend</h6>
+            <div class="d-flex flex-wrap">
+              <span class="pill">React</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3/Sass</span>
+              <span class="pill">Bootstrap</span>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+        <div class="col-md-3">
           <div class="skill-group">
-            <h6 class="mb-3">Backend</h6>
-            <div>
-              <span class="pill jj">Python</span>
-              <span class="pill jj">Node.js</span>
-              <span class="pill jj">REST APIs</span>
-              <span class="pill jj">PHP</span>
+            <h6 data-i18n="skills-cat-2">Backend</h6>
+            <div class="d-flex flex-wrap">
+              <span class="pill">PHP</span>
+              <span class="pill">Python</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">SaaS Architecture</span>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+        <div class="col-md-3">
           <div class="skill-group">
-            <h6 class="mb-3">Databases</h6>
-            <div>
-              <span class="pill jj">SQL</span>
-              <span class="pill jj">PostgreSQL</span>
-              <span class="pill jj">MySQL</span>
-              <span class="pill jj">SQLite</span>
+            <h6 data-i18n="skills-cat-3">Databases</h6>
+            <div class="d-flex flex-wrap">
+              <span class="pill">MySQL</span>
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">SQLite</span>
+              <span class="pill">SQL Design</span>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+        <div class="col-md-3">
           <div class="skill-group">
-            <h6 class="mb-3">Tools</h6>
-            <div>
-              <span class="pill jj">Git</span>
-              <span class="pill jj">GitHub</span>
-              <span class="pill jj">Docker</span>
-              <span class="pill jj">NPM</span>
-              <span class="pill jj">Webpack</span>
+            <h6 data-i18n="skills-cat-4">Tools & Design</h6>
+            <div class="d-flex flex-wrap">
+              <span class="pill">Git/GitHub</span>
+              <span class="pill">Docker</span>
+              <span class="pill">NPM</span>
+              <span class="pill">ERP UI Design</span>
+              <span class="pill">Webpack</span>
             </div>
           </div>
         </div>
@@ -399,78 +628,242 @@
     </div>
   </section>
 
+  <!-- Featured Projects -->
   <section id="projects" class="section">
-    <h2 class="section-title">Projects</h2>
     <div class="container">
+      <h2 class="section-title section-title-centered" data-i18n="projects-title">Enterprise SaaS & Management Systems
+      </h2>
+      <div class="row g-4 mb-5">
+        <!-- SaaS Projects -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="estate.png" class="card-img-top" alt="Real Estate Management System">
+            <div class="card-body">
+              <span class="badge-featured" data-i18n="proj-1-badge">Real Estate SaaS</span>
+              <h5 class="card-title" data-i18n="proj-1-title">Real Estate Management System</h5>
+              <p class="card-text" data-i18n="proj-1-text">A professional system for tracking properties, tenants, and
+                finances. Features automated lease generation (PDF), dynamic reporting, and advanced security protocols.
+              </p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL (PDO)</span>
+                <span class="pill">AJAX</span>
+                <span class="pill">Dompdf</span>
+                <span class="pill">Chart.js</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://state.66ghz.com" target="_blank" class="btn btn-primary w-100"
+                data-i18n="btn-view-live">View Live</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="mm inventory.png" class="card-img-top" alt="MM Inventory Management">
+            <div class="card-body">
+              <span class="badge-featured" data-i18n="proj-2-badge">Inventory Control</span>
+              <h5 class="card-title" data-i18n="proj-2-title">MM Inventory Management</h5>
+              <p class="card-text" data-i18n="proj-2-text">A robust stock control system with CRUD operations and a
+                mobile-responsive dashboard for real-time tracking.</p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">Vanilla JS</span>
+                <span class="pill">CRUD</span>
+                <span class="pill">Responsive Dashboard</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mm-system.kesug.com/" target="_blank" class="btn btn-primary w-100"
+                data-i18n="btn-view-live">View Live</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="mmcafe dark.png" class="card-img-top" alt="MM Cafe & Restaurant POS">
+            <div class="card-body">
+              <span class="badge-featured" data-i18n="proj-3-badge">Latest SaaS</span>
+              <h5 class="card-title" data-i18n="proj-3-title">MM Cafe & Restaurant POS</h5>
+              <p class="card-text" data-i18n="proj-3-text">A comprehensive bilingual POS system with order routing
+                (Dining/Takeaway/Delivery), KDS, and financial reporting.</p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">AJAX</span>
+                <span class="pill">Chart.js</span>
+                <span class="pill">Real-time Orders</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mm-cafe.kesug.com" target="_blank" class="btn btn-primary w-100"
+                data-i18n="btn-view-live">View Live</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-center mb-4" style="color: var(--text-header); font-weight: 600;" data-i18n="projects-sub-1">
+        Full-Stack Solutions</h3>
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="proj-4-title">Tetch</h5>
+              <p class="card-text" data-i18n="proj-4-text">Comprehensive Technology & Gadgets Store. Featuring a
+                complete
+                shopping cart, user authentication, and a dynamic backend for product management.</p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">JS</span>
+                <span class="pill">E-commerce Logic</span>
+                <span class="pill">Dynamic DB</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://tech-gadgets.kesug.com/" target="_blank" class="btn btn-outline-light w-100"
+                data-i18n="btn-view-project">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="proj-5-title">FirstMedical Store</h5>
+              <p class="card-text" data-i18n="proj-5-text">Professional Medical Equipment Store. Medical e‑commerce
+                storefront with product sections and advanced management logic.</p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">JS</span>
+                <span class="pill">E-commerce Logic</span>
+                <span class="pill">Dynamic DB</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://firstmedical.store/" target="_blank" class="btn btn-outline-light w-100"
+                data-i18n="btn-view-project">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-center mb-4" style="color: var(--text-header); font-weight: 600;" data-i18n="projects-sub-2">
+        Frontend & Other Projects</h3>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100">
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Project 234</h5>
-              <p class="muted">Modern responsive UI built with HTML, CSS and JavaScript; optimized layout and
-                performance.</p>
-              <a href="https://mimoss0.github.io/project-234-/" target="_blank" class="btn btn-primary">View Project</a>
+              <span class="badge-featured" data-i18n="proj-6-badge">Architecture UI</span>
+              <h5 class="card-title" data-i18n="proj-6-title">Saudi Architectural Portfolio</h5>
+              <p class="card-text" data-i18n="proj-6-text">A specialized portfolio showcase for a Saudi Architect.
+                Featuring modern design, elegant image galleries, and immersive 3D visualization embeds to showcase
+                architectural works.</p>
+              <div class="card-tags">
+                <span class="pill">HTML5</span>
+                <span class="pill">CSS3</span>
+                <span class="pill">UI/UX</span>
+                <span class="pill">3D Visualization</span>
+                <span class="pill">Responsive Design</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mimoss0.github.io/Architectural-Portfolio/" target="_blank"
+                class="btn btn-outline-light w-100" data-i18n="btn-view-live">View Live</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tech Gadgets</h5>
-              <p class="muted">Responsive tech catalogue/blog using HTML/CSS and JS, presenting gadgets and articles.
-              </p>
-              <a href="https://tech-gadgets.kesug.com/" target="_blank" class="btn btn-primary">View Project</a>
+              <h5 class="card-title" data-i18n="proj-7-title">Project 234</h5>
+              <p class="card-text" data-i18n="proj-7-text">Modern responsive UI built with HTML, CSS and JavaScript;
+                optimized layout and performance.</p>
+              <div class="card-tags">
+                <span class="pill">HTML5</span>
+                <span class="pill">CSS3</span>
+                <span class="pill">JavaScript</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mimoss0.github.io/project-234-/" target="_blank" class="btn btn-outline-light w-100"
+                data-i18n="btn-view-project">View Project</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FirstMedical Store</h5>
-              <p class="muted">Medical e‑commerce storefront with product sections and CTAs built with HTML, CSS,
-                JavaScript.</p>
-              <a href="https://firstmedical.store/" target="_blank" class="btn btn-primary">View Project</a>
+              <h5 class="card-title" data-i18n="proj-8-title">Mobilia Place</h5>
+              <p class="card-text" data-i18n="proj-8-text">Furniture store demo with cart flow; stack: HTML, CSS,
+                JavaScript, Bootstrap; deployed on Vercel.</p>
+              <div class="card-tags">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">Bootstrap</span>
+                <span class="pill">JS</span>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">E‑commerce Store</h5>
-              <p class="muted">Furniture store demo with cart flow; stack: HTML, CSS, JavaScript, Bootstrap; deployed on
-                Vercel.</p>
-              <a href="https://mobilia-place.vercel.app" target="_blank" class="btn btn-primary">View Project</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Sheets Upload Portal</h5>
-              <p class="muted">Student portal to upload sheets via ID with client‑side validation; built with HTML, CSS,
-                JS, Bootstrap.</p>
-              <a href="https://mimoss0.github.io/Egi-project/" target="_blank" class="btn btn-primary">View Project</a>
+            <div class="card-footer">
+              <a href="https://mobilia-place.vercel.app" target="_blank" class="btn btn-outline-light w-100"
+                data-i18n="btn-view-project">View Project</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Restaurant Landing Page</h5>
-              <p class="muted">Marketing landing page with menu sections and responsive grid using Bootstrap components.
-              </p>
-              <a href="https://mimoss0.github.io/Restaurant-Landing-Page/" target="_blank" class="btn btn-primary">View
-                Project</a>
+              <h5 class="card-title" data-i18n="proj-9-title">Sheets Upload Portal</h5>
+              <p class="card-text" data-i18n="proj-9-text">Student portal to upload sheets via ID with client‑side
+                validation; built with HTML, CSS, JS, Bootstrap.</p>
+              <div class="card-tags">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">JS</span>
+                <span class="pill">Secure Uploads</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mimoss0.github.io/Egi-project/" target="_blank" class="btn btn-outline-light w-100"
+                data-i18n="btn-view-project">View Project</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Calculator</h5>
-              <p class="muted">Vanilla JS calculator supporting basic arithmetic and keyboard input with a clean UI.</p>
-              <a href="https://mimoss0.github.io/Calculator/" target="_blank" class="btn btn-primary">View Project</a>
+              <h5 class="card-title" data-i18n="proj-10-title">Restaurant Landing Page</h5>
+              <p class="card-text" data-i18n="proj-10-text">Marketing landing page with menu sections and responsive
+                grid using Bootstrap components.</p>
+              <div class="card-tags">
+                <span class="pill">HTML5</span>
+                <span class="pill">Bootstrap 5</span>
+                <span class="pill">Responsive</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mimoss0.github.io/Restaurant-Landing-Page/" target="_blank"
+                class="btn btn-outline-light w-100" data-i18n="btn-view-project">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="proj-11-title">JS Calculator</h5>
+              <p class="card-text" data-i18n="proj-11-text">Vanilla JS calculator supporting basic arithmetic and
+                keyboard input with a clean UI.</p>
+              <div class="card-tags">
+                <span class="pill">JavaScript</span>
+                <span class="pill">DOM Manipulation</span>
+                <span class="pill">Math Logic</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mimoss0.github.io/Calculator/" target="_blank" class="btn btn-outline-light w-100"
+                data-i18n="btn-view-project">View Project</a>
             </div>
           </div>
         </div>
@@ -478,45 +871,272 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="section">
-    <h2 class="section-title">Contact Me</h2>
     <div class="container text-center">
-      <p class="muted">You can reach me via:</p>
-      <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
-        <a href="mailto:email@domain.com" class="btn btn-outline-light">Email</a>
-        <a href="https://github.com/mimoss0" target="_blank" class="btn btn-outline-light">GitHub</a>
-        <a href="https://linkedin.com/in/username" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+      <h2 class="section-title section-title-centered" data-i18n="contact-title">Contact Me</h2>
+      <p class="lead mb-5" data-i18n="contact-subtitle">Interested in working together? Let's talk about your next
+        project.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
+        <a href="mailto:email@domain.com" class="btn btn-primary" data-i18n="contact-btn-email">Email Me</a>
+        <a href="https://github.com/mimoss0" target="_blank" class="btn btn-outline-light"
+          data-i18n="contact-btn-github">GitHub Profile</a>
       </div>
-      <div>Phone: 01066468046</div>
+      <div class="contact-info">
+        <p class="mb-1" data-i18n="contact-phone">Phone: 01037526242</p>
+        <p class="text-muted" data-i18n="contact-availability">Available for freelance and full-time opportunities.</p>
+      </div>
     </div>
   </section>
 
-  <footer class="muted">
-    All rights reserved © Mohamed Sayed
+  <!-- Education Section -->
+  <section id="education" class="section" style="background-color: rgba(22, 27, 34, 0.3);">
+    <div class="container text-center">
+      <h2 class="section-title section-title-centered" data-i18n="edu-title">Education</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="edu-degree">Computer Science / Software Engineering</h5>
+              <p class="card-text" data-i18n="edu-text">Focusing on Full-Stack Development, Data Structures, and
+                Database Management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer-text">All rights reserved © Mohamed Sayed | 2024</p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    (function () {
-      var saved = localStorage.getItem('theme');
-      var body = document.body;
-      var toggle = document.getElementById('themeToggle');
-      var styles = getComputedStyle(body);
-      var sunSVG = styles.getPropertyValue('--icon-sun').trim().replace(/^"|"$/g, '');
-      var moonSVG = styles.getPropertyValue('--icon-moon').trim().replace(/^"|"$/g, '');
-      var current = saved === 'dark' ? 'dark' : 'light';
-      body.setAttribute('data-theme', current);
-      toggle.innerHTML = current === 'light' ? sunSVG : moonSVG;
-      toggle.addEventListener('click', function () {
-        var next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        body.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        var s = getComputedStyle(body);
-        var sun = s.getPropertyValue('--icon-sun').trim().replace(/^"|"$/g, '');
-        var moon = s.getPropertyValue('--icon-moon').trim().replace(/^"|"$/g, '');
-        this.innerHTML = next === 'light' ? sun : moon;
+    // Translation Data
+    const translations = {
+      en: {
+        "title": "Mohamed Sayed | Full-Stack Developer Portfolio",
+        "nav-brand": "Mohamed Sayed",
+        "nav-about": "About",
+        "nav-experience": "Experience",
+        "nav-skills": "Skills",
+        "nav-projects": "Projects",
+        "nav-contact": "Contact",
+        "hero-name": "Mohamed Sayed",
+        "hero-title": "Full‑Stack Web Developer specializing in high-performance SaaS applications and modern user interfaces.",
+        "hero-btn-primary": "Featured Projects",
+        "hero-btn-outline": "Get In Touch",
+        "about-title": "About Me",
+        "about-text": "I’m a dedicated full‑stack web developer building modern frontends and robust backends with advanced database integrations. I focus on performance, UX, and delivering scalable SaaS solutions with clean, responsive designs.",
+        "about-tag-1": "Performance Oriented",
+        "about-tag-2": "Scalable SaaS",
+        "about-tag-3": "Clean UI/UX",
+        "about-tag-4": "API First",
+        "about-tag-5": "Security Focused",
+        "services-title": "Core Services",
+        "service-1-title": "Frontend Mastery",
+        "service-1-text": "Developing responsive, high-performance UIs using React, TypeScript, and modern CSS frameworks with smooth animations.",
+        "service-2-title": "Backend Architecture",
+        "service-2-text": "Building robust RESTful APIs and microservices with Node.js and Python, ensuring security and scalability.",
+        "service-3-title": "SaaS & ERP Solutions",
+        "service-3-text": "Designing comprehensive management systems with complex workflows, real-time reporting, and intuitive dashboards.",
+        "exp-main-title": "Professional Experience",
+        "exp-1-date": "Ongoing",
+        "exp-1-title": "Freelance Web Developer",
+        "exp-1-company": "Self-Employed",
+        "exp-1-text": "Developing custom web solutions for diverse clients, focusing on e-commerce, management systems, and landing pages. Implementing modern tech stacks to deliver fast, SEO-friendly, and responsive applications.",
+        "exp-2-date": "2023 - 2024",
+        "exp-2-title": "Graduation Project: Sheets Upload Portal",
+        "exp-2-company": "University Project",
+        "exp-2-text": "Built a high-performance student portal for sheet submissions with advanced client-side validation and secure file handling. Optimized the layout for mobile and desktop users using Bootstrap and Vanilla JavaScript.",
+        "skills-title": "Technical Expertise",
+        "skills-cat-1": "Frontend",
+        "skills-cat-2": "Backend",
+        "skills-cat-3": "Databases",
+        "skills-cat-4": "Tools & Design",
+        "projects-title": "Enterprise SaaS & Management Systems",
+        "proj-1-badge": "Real Estate SaaS",
+        "proj-1-title": "Real Estate Management System",
+        "proj-1-text": "A professional system for tracking properties, tenants, and finances. Features automated lease generation (PDF), dynamic reporting, and advanced security protocols.",
+        "proj-2-badge": "Inventory Control",
+        "proj-2-title": "MM Inventory Management",
+        "proj-2-text": "A robust stock control system with CRUD operations and a mobile-responsive dashboard for real-time tracking.",
+        "proj-3-badge": "Latest SaaS",
+        "proj-3-title": "MM Cafe & Restaurant POS",
+        "proj-3-text": "A comprehensive bilingual POS system with order routing (Dining/Takeaway/Delivery), KDS, and financial reporting.",
+        "projects-sub-1": "Full-Stack Solutions",
+        "proj-4-title": "Tetch",
+        "proj-4-text": "Comprehensive Technology & Gadgets Store. Featuring a complete shopping cart, user authentication, and a dynamic backend for product management.",
+        "proj-5-title": "FirstMedical Store",
+        "proj-5-text": "Professional Medical Equipment Store. Medical e‑commerce storefront with product sections and advanced management logic.",
+        "projects-sub-2": "Frontend & Other Projects",
+        "proj-6-badge": "Architecture UI",
+        "proj-6-title": "Saudi Architectural Portfolio",
+        "proj-6-text": "A specialized portfolio showcase for a Saudi Architect. Featuring modern design, elegant image galleries, and immersive 3D visualization embeds to showcase architectural works.",
+        "proj-7-title": "Project 234",
+        "proj-7-text": "Modern responsive UI built with HTML, CSS and JavaScript; optimized layout and performance.",
+        "proj-8-title": "Mobilia Place",
+        "proj-8-text": "Furniture store demo with cart flow; stack: HTML, CSS, JavaScript, Bootstrap; deployed on Vercel.",
+        "proj-9-title": "Sheets Upload Portal",
+        "proj-9-text": "Student portal to upload sheets via ID with client‑side validation; built with HTML, CSS, JS, Bootstrap.",
+        "proj-10-title": "Restaurant Landing Page",
+        "proj-10-text": "Marketing landing page with menu sections and responsive grid using Bootstrap components.",
+        "proj-11-title": "JS Calculator",
+        "proj-11-text": "Vanilla JS calculator supporting basic arithmetic and keyboard input with a clean UI.",
+        "btn-view-live": "View Live",
+        "btn-view-project": "View Project",
+        "contact-title": "Contact Me",
+        "contact-subtitle": "Interested in working together? Let's talk about your next project.",
+        "contact-btn-email": "Email Me",
+        "contact-btn-github": "GitHub Profile",
+        "contact-phone": "Phone: 01037526242",
+        "contact-availability": "Available for freelance and full-time opportunities.",
+        "edu-title": "Education",
+        "edu-degree": "Computer Science / Software Engineering",
+        "edu-text": "Focusing on Full-Stack Development, Data Structures, and Database Management.",
+        "footer-text": "All rights reserved © Mohamed Sayed | 2024"
+      },
+      ar: {
+        "title": "محمد سيد | معرض أعمال مطور الويب المتكامل",
+        "nav-brand": "محمد سيد",
+        "nav-about": "من أنا",
+        "nav-experience": "الخبرة",
+        "nav-skills": "المهارات",
+        "nav-projects": "المشاريع",
+        "nav-contact": "اتصل بي",
+        "hero-name": "محمد سيد",
+        "hero-title": "مطور ويب متكامل متخصص في تطبيقات SaaS عالية الأداء وواجهات المستخدم الحديثة.",
+        "hero-btn-primary": "المشاريع المميزة",
+        "hero-btn-outline": "تواصل معي",
+        "about-title": "من أنا",
+        "about-text": "أنا مطور ويب متكامل متخصص في بناء واجهات أمامية حديثة وخلفيات برمجية قوية مع تكامل متقدم لقواعد البيانات. أركز على الأداء وتجربة المستخدم وتقديم حلول SaaS قابلة للتوسع بتصاميم نظيفة واستجابية.",
+        "about-tag-1": "موجه نحو الأداء",
+        "about-tag-2": "تطبيقات SaaS قابلة للتوسع",
+        "about-tag-3": "واجهة مستخدم نظيفة",
+        "about-tag-4": "الاعتماد على APIs",
+        "about-tag-5": "تركيز على الأمان",
+        "services-title": "الخدمات الأساسية",
+        "service-1-title": "إتقان الواجهة الأمامية",
+        "service-1-text": "تطوير واجهات مستخدم استجابية وعالية الأداء باستخدام React و TypeScript وإطارات عمل CSS الحديثة مع رسوم متحركة سلسة.",
+        "service-2-title": "بناء الخلفية البرمجية",
+        "service-2-text": "بناء APIs قوية وبنية خدمات مصغرة باستخدام Node.js و Python، مع ضمان الأمان وقابلية التوسع.",
+        "service-3-title": "حلول SaaS و ERP",
+        "service-3-text": "تصميم أنظمة إدارة شاملة مع تدفقات عمل معقدة وتقارير فورية ولوحات تحكم بديهية.",
+        "exp-main-title": "الخبرة المهنية",
+        "exp-1-date": "مستمر",
+        "exp-1-title": "مطور ويب حر",
+        "exp-1-company": "عمل حر",
+        "exp-1-text": "تطوير حلول ويب مخصصة لعملاء متنوعين، مع التركيز على التجارة الإلكترونية وأنظمة الإدارة وصفحات الهبوط. استخدام تقنيات حديثة لتقديم تطبيقات سريعة وصديقة لمحركات البحث واستجابية.",
+        "exp-2-date": "2023 - 2024",
+        "exp-2-title": "مشروع التخرج: بوابة رفع الشيتات",
+        "exp-2-company": "مشروع جامعي",
+        "exp-2-text": "بناء بوابة طلابية عالية الأداء لرفع الشيتات مع تحقق متقدم من البيانات وتداول آمن للملفات. تحسين التصميم لمستخدمي الهاتف والمكتوب باستخدام Bootstrap و Vanilla JavaScript.",
+        "skills-title": "الخبرة التقنية",
+        "skills-cat-1": "الواجهة الأمامية",
+        "skills-cat-2": "الخلفية البرمجية",
+        "skills-cat-3": "قواعد البيانات",
+        "skills-cat-4": "الأدوات والتصميم",
+        "projects-title": "أنظمة إدارة ومؤسسات SaaS",
+        "proj-1-badge": "SaaS عقارات",
+        "proj-1-title": "نظام إدارة العقارات",
+        "proj-1-text": "نظام احترافي لتتبع العقارات والمستأجرين والمالية. يتميز بتوليد عقود إيجار تلقائية (PDF)، وتقارير ديناميكية، وبروتوكولات أمان متقدمة.",
+        "proj-2-badge": "التحكم في المخزون",
+        "proj-2-title": "نظام إدارة المخازن MM",
+        "proj-2-text": "نظام قوي للتحكم في المخزون مع عمليات CRUD ولوحة تحكم استجابية للهاتف للتتبع الفوري.",
+        "proj-3-badge": "أحدث SaaS",
+        "proj-3-title": "نظام نقاط البيع للمطاعم والمقاهي MM",
+        "proj-3-text": "نظام POS شامل ثنائي اللغة مع توجيه الطلبات (داخلي/سفري/توصيل)، ونظام عرض المطبخ، وتقارير مالية.",
+        "projects-sub-1": "حلول برمجية متكاملة",
+        "proj-4-title": "تيتش",
+        "proj-4-text": "متجر شامل للتكنولوجيا والأجهزة. يتميز بعربة تسوق كاملة، وتحقق من هوية المستخدم، وخلفية برمجية ديناميكية لإدارة المنتجات.",
+        "proj-5-title": "متجر فيرست ميديكال",
+        "proj-5-text": "متجر معدات طبية احترافي. واجهة متجر طبية مع أقسام للمنتجات ومنطق إدارة متقدم.",
+        "projects-sub-2": "الواجهة الأمامية ومشاريع أخرى",
+        "proj-6-badge": "واجهة معمارية",
+        "proj-6-title": "معرض أعمال هندسة معمارية سعودي",
+        "proj-6-text": "معرض أعمال متخصص لمهندس معماري سعودي. يتميز بتصميم حديث، ومعارض صور أنيقة، وتضمين نماذج ثلاثية الأبعاد لعرض الأعمال المعمارية.",
+        "proj-7-title": "مشروع 234",
+        "proj-7-text": "واجهة مستخدم حديثة واستجابية مبنية باستخدام HTML و CSS و JavaScript؛ أداء وتصميم محسن.",
+        "proj-8-title": "موبيليا بليس",
+        "proj-8-text": "تجربة متجر أثاث مع تدفق عربة التسوق؛ التقنيات: HTML, CSS, JavaScript, Bootstrap؛ مرفوع على Vercel.",
+        "proj-9-title": "بوابة رفع الشيتات",
+        "proj-9-text": "بوابة طلابية لرفع الشيتات عبر الرقم التعريفي مع تحقق من البيانات؛ مبنية باستخدام HTML, CSS, JS, Bootstrap.",
+        "proj-10-title": "صفحة هبوط لمطعم",
+        "proj-10-text": "صفحة هبوط تسويقية مع أقسام للمنيو وشبكة استجابية باستخدام مكونات Bootstrap.",
+        "proj-11-title": "حاسبة JS",
+        "proj-11-text": "حاسبة JavaScript تدعم العمليات الحسابية الأساسية والإدخال عبر لوحة المفاتيح مع واجهة نظيفة.",
+        "btn-view-live": "عرض مباشر",
+        "btn-view-project": "عرض المشروع",
+        "contact-title": "اتصل بي",
+        "contact-subtitle": "مهتم بالعمل معاً؟ لنناقش مشروعك القادم.",
+        "contact-btn-email": "راسلني",
+        "contact-btn-github": "ملف GitHub",
+        "contact-phone": "الهاتف: 01037526242",
+        "contact-availability": "متاح للعمل الحر والفرص بدوام كامل.",
+        "edu-title": "التعليم",
+        "edu-degree": "علوم الحاسب / هندسة البرمجيات",
+        "edu-text": "التركيز على التطوير المتكامل، هياكل البيانات، وإدارة قواعد البيانات.",
+        "footer-text": "جميع الحقوق محفوظة © محمد سيد | 2024"
+      }
+    };
+
+    // State Management
+    let currentLang = localStorage.getItem('lang') || 'en';
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+
+    const langToggle = document.getElementById('lang-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+
+    // Apply Language
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
       });
-    })();
+    }
+
+    // Apply Theme
+    function applyTheme(theme) {
+      currentTheme = theme;
+      localStorage.setItem('theme', theme);
+      html.setAttribute('data-theme', theme);
+      themeIcon.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+    }
+
+    // Listeners
+    langToggle.addEventListener('click', () => {
+      applyLanguage(currentLang === 'en' ? 'ar' : 'en');
+    });
+
+    themeToggle.addEventListener('click', () => {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Initialize
+    applyLanguage(currentLang);
+    applyTheme(currentTheme);
+
+    // Bootstrap Nav Close on Click (Mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('nav');
+        if (nav.classList.contains('show')) {
+          new bootstrap.Collapse(nav).hide();
+        }
+      });
+    });
   </script>
 </body>
 
