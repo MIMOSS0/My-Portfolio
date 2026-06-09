@@ -64,6 +64,112 @@
       font-family: 'Cairo', sans-serif;
     }
 
+    .floating-dots {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-rail {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom,
+          rgba(18, 73, 163, 0.18),
+          rgba(13, 84, 217, 0.92),
+          rgba(18, 73, 163, 0.18));
+      box-shadow: 0 0 10px rgba(10, 84, 221, 0.32), 0 0 22px rgba(10, 84, 221, 0.18);
+      opacity: 0.95;
+    }
+
+    .floating-rail-left {
+      left: 13px;
+    }
+
+    .floating-rail-right {
+      right: 13px;
+    }
+
+    .floating-dot {
+      position: absolute;
+      top: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #3d79dc 0%, #154d9f 52%, #082a63 100%);
+      box-shadow: 0 0 12px rgba(11, 53, 124, 0.45), 0 0 28px rgba(17, 75, 173, 0.2);
+      opacity: 0.82;
+      will-change: transform;
+    }
+
+    .floating-dot::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: rgba(23, 76, 164, 0.22);
+      filter: blur(6px);
+    }
+
+    .floating-dot::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 3px;
+      height: 64px;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: linear-gradient(to bottom,
+          rgba(8, 42, 99, 0),
+          rgba(21, 77, 159, 0.55),
+          rgba(8, 42, 99, 0));
+      filter: blur(4px);
+      opacity: 0.85;
+    }
+
+    .floating-dot-left-1 {
+      left: 10px;
+      top: 0;
+      animation: floatPageLoop 1.2s linear infinite;
+    }
+
+    .floating-dot-left-2 {
+      left: 10px;
+      top: 18px;
+      animation: floatPageLoop 1.2s linear infinite;
+    }
+
+    .floating-dot-right-1 {
+      right: 10px;
+      top: 0;
+      animation: floatPageLoop 1.2s linear infinite;
+    }
+
+    .floating-dot-right-2 {
+      right: 10px;
+      top: 18px;
+      animation: floatPageLoop 1.2s linear infinite;
+    }
+
+    [data-theme="light"] .floating-dot {
+      box-shadow: 0 0 10px rgba(8, 42, 99, 0.25), 0 0 22px rgba(21, 77, 159, 0.14);
+      opacity: 0.6;
+    }
+
+    [data-theme="light"] .floating-rail {
+      background: linear-gradient(to bottom,
+          rgba(18, 73, 163, 0.12),
+          rgba(13, 84, 217, 0.72),
+          rgba(18, 73, 163, 0.12));
+      box-shadow: 0 0 8px rgba(10, 84, 221, 0.18), 0 0 18px rgba(10, 84, 221, 0.08);
+      opacity: 0.75;
+    }
+
     /* Navbar */
     .navbar {
       background-color: var(--bg) !important;
@@ -178,6 +284,22 @@
       transform: translateY(-2px);
     }
 
+    .btn-outline-light:disabled,
+    .btn-outline-light.disabled {
+      color: var(--text-header);
+      border-color: var(--border);
+      background-color: transparent;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+
+    [data-theme="light"] .btn-outline-light:disabled,
+    [data-theme="light"] .btn-outline-light.disabled {
+      background-color: #eef2f6;
+      color: var(--text-header);
+      border-color: #c7d0da;
+    }
+
     /* Section Styles */
     .section {
       padding: 80px 0;
@@ -282,6 +404,49 @@
       background: transparent;
       border-top: 1px solid var(--border);
       padding: 20px 25px;
+    }
+
+    .card-wide {
+      min-height: 100%;
+    }
+
+    .card-wide .card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    @media (min-width: 768px) {
+      .card-wide {
+        flex-direction: row;
+        min-height: 200px;
+      }
+
+      .card-wide .card-img-top {
+        width: 33.333%;
+        min-height: 100%;
+        height: auto;
+        border-bottom: none;
+        border-inline-end: 1px solid var(--border);
+      }
+
+      .card-wide .card-footer {
+        border-top: none;
+        border-inline-start: 1px solid var(--border);
+        min-width: 220px;
+        display: flex;
+        align-items: center;
+      }
+
+      html[lang="ar"] .card-wide .card-img-top {
+        border-inline-end: none;
+        border-inline-start: 1px solid var(--border);
+      }
+
+      html[lang="ar"] .card-wide .card-footer {
+        border-inline-start: none;
+        border-inline-end: 1px solid var(--border);
+      }
     }
 
     /* Featured Badge */
@@ -413,6 +578,20 @@
       }
     }
 
+    @keyframes floatPageLoop {
+      0% {
+        transform: translate3d(0, -12vh, 0) scale(0.92);
+      }
+
+      50% {
+        transform: translate3d(0, 112vh, 0) scale(1);
+      }
+
+      100% {
+        transform: translate3d(0, -12vh, 0) scale(0.92);
+      }
+    }
+
     .animate-in {
       animation: fadeIn 0.8s ease forwards;
     }
@@ -434,11 +613,56 @@
       .control-btn {
         margin: 5px;
       }
+
+      .floating-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      .floating-dot::after {
+        height: 48px;
+      }
+
+      .floating-rail-left {
+        left: 7px;
+      }
+
+      .floating-rail-right {
+        right: 7px;
+      }
+
+      .floating-dot-left-1 {
+        left: 4px;
+        top: 0;
+      }
+
+      .floating-dot-right-1 {
+        right: 4px;
+        top: 0;
+      }
+
+      .floating-dot-left-2 {
+        left: 4px;
+        top: 14px;
+      }
+
+      .floating-dot-right-2 {
+        right: 4px;
+        top: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="floating-dots" aria-hidden="true">
+    <span class="floating-rail floating-rail-left"></span>
+    <span class="floating-rail floating-rail-right"></span>
+    <span class="floating-dot floating-dot-left-1"></span>
+    <span class="floating-dot floating-dot-left-2"></span>
+    <span class="floating-dot floating-dot-right-1"></span>
+    <span class="floating-dot floating-dot-right-2"></span>
+  </div>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
@@ -637,6 +861,32 @@
         <!-- SaaS Projects -->
         <div class="col-md-4">
           <div class="card">
+            <img src="nws.png" onerror="this.src='https://placehold.co/1200x800/161b22/c9d1d9?text=NWS+Cooperative+ERP'"
+              class="card-img-top" alt="Integrated Digital Platform for a Cooperative Society">
+            <div class="card-body">
+              <span class="badge-featured" data-i18n="proj-coop-badge">Featured ERP & Commerce</span>
+              <h5 class="card-title" data-i18n="proj-coop-title">Integrated Digital Platform for a Cooperative Society
+                (ERP & E-Commerce)</h5>
+              <p class="card-text" data-i18n="proj-coop-text">A large-scale native platform combining an advanced
+                e-commerce store, a shareholder self-service portal with digital cards and profit wallets, and a
+                comprehensive admin dashboard for daily operations and sales management.</p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">Vanilla JS</span>
+                <span class="pill">AJAX</span>
+                <span class="pill">Custom CSS</span>
+                <span class="pill">APIs</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://nwscooop.com" target="_blank" class="btn btn-primary w-100"
+                data-i18n="btn-view-live">View Live</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
             <img src="estate.png" class="card-img-top" alt="Real Estate Management System">
             <div class="card-body">
               <span class="badge-featured" data-i18n="proj-1-badge">Real Estate SaaS</span>
@@ -682,30 +932,6 @@
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="mmcafe dark.png" class="card-img-top" alt="MM Cafe & Restaurant POS">
-            <div class="card-body">
-              <span class="badge-featured" data-i18n="proj-3-badge">Latest SaaS</span>
-              <h5 class="card-title" data-i18n="proj-3-title">MM Cafe & Restaurant POS</h5>
-              <p class="card-text" data-i18n="proj-3-text">A comprehensive bilingual POS system with order routing
-                (Dining/Takeaway/Delivery), KDS, and financial reporting.</p>
-              <div class="card-tags">
-                <span class="pill">PHP</span>
-                <span class="pill">MySQL</span>
-                <span class="pill">AJAX</span>
-                <span class="pill">Chart.js</span>
-                <span class="pill">Real-time Orders</span>
-              </div>
-            </div>
-            <div class="card-footer">
-              <a href="https://mm-cafe.kesug.com" target="_blank" class="btn btn-primary w-100"
-                data-i18n="btn-view-live">View Live</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Featured Projects Row 2 -->
-        <div class="col-md-6">
-          <div class="card">
             <img src="bait.png"
               onerror="this.src='https://placehold.co/1200x800/161b22/c9d1d9?text=Bait+Al-Balad+Screenshot'"
               class="card-img-top" alt="Bait Al-Balad News Platform">
@@ -723,14 +949,13 @@
                 <span class="pill">Vanilla JS</span>
               </div>
             </div>
-            <div class="card-footer mt-auto">
+            <div class="card-footer">
               <a href="https://bait-albalad.66ghz.com/" target="_blank" class="btn btn-primary w-100"
                 data-i18n="btn-view-live">View Live</a>
             </div>
           </div>
         </div>
-
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="card">
             <img src="sys.png"
               onerror="this.src='https://placehold.co/1200x800/161b22/c9d1d9?text=ERP+System+Screenshot'"
@@ -748,8 +973,30 @@
                 <span class="pill">CSS Variables</span>
               </div>
             </div>
-            <div class="card-footer mt-auto">
+            <div class="card-footer">
               <a href="https://system.66ghz.com/" target="_blank" class="btn btn-primary w-100"
+                data-i18n="btn-view-live">View Live</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="mmcafe dark.png" class="card-img-top" alt="MM Cafe & Restaurant POS">
+            <div class="card-body">
+              <span class="badge-featured" data-i18n="proj-3-badge">Latest SaaS</span>
+              <h5 class="card-title" data-i18n="proj-3-title">MM Cafe & Restaurant POS</h5>
+              <p class="card-text" data-i18n="proj-3-text">A comprehensive bilingual POS system with order routing
+                (Dining/Takeaway/Delivery), KDS, and financial reporting.</p>
+              <div class="card-tags">
+                <span class="pill">PHP</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">AJAX</span>
+                <span class="pill">Chart.js</span>
+                <span class="pill">Real-time Orders</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://mm-cafe.kesug.com" target="_blank" class="btn btn-primary w-100"
                 data-i18n="btn-view-live">View Live</a>
             </div>
           </div>
@@ -805,6 +1052,33 @@
       <h3 class="text-center mb-4" style="color: var(--text-header); font-weight: 600;" data-i18n="projects-sub-2">
         Frontend & Other Projects</h3>
       <div class="row g-4">
+        <div class="col-12">
+          <div class="card card-wide">
+            <img src="wp.png"
+              onerror="this.src='https://placehold.co/1200x800/161b22/c9d1d9?text=WordPress+Educational+Platform'"
+              class="card-img-top" alt="WordPress Educational Platform">
+            <div class="card-content">
+              <div class="card-body">
+                <span class="badge-featured" data-i18n="proj-wp-badge">WordPress Platform</span>
+                <h5 class="card-title" data-i18n="proj-wp-title">University Educational Platform Design & Development
+                  (WordPress Educational Platform)</h5>
+                <p class="card-text" data-i18n="proj-wp-text">A complete educational platform website built with the
+                  Astra theme and Elementor page builder. Features a modern UI, smooth animations, interactive counters,
+                  and a contact form integrated with Google Maps.</p>
+                <div class="card-tags">
+                  <span class="pill">WordPress</span>
+                  <span class="pill">Elementor</span>
+                  <span class="pill">UI/UX</span>
+                  <span class="pill">Web Design</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-outline-light w-100" disabled data-i18n="btn-local-project">Local
+                  Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
@@ -1010,6 +1284,9 @@
         "skills-cat-3": "Databases",
         "skills-cat-4": "Tools & Design",
         "projects-title": "Enterprise SaaS & Management Systems",
+        "proj-coop-badge": "Featured ERP & Commerce",
+        "proj-coop-title": "Integrated Digital Platform for a Cooperative Society (ERP & E-Commerce)",
+        "proj-coop-text": "A large-scale native platform combining an advanced e-commerce store, a shareholder self-service portal with digital cards and profit wallets, and a comprehensive admin dashboard for daily operations and sales management. Built entirely from scratch for maximum performance and security.",
         "proj-1-badge": "Real Estate SaaS",
         "proj-1-title": "Real Estate Management System",
         "proj-1-text": "A professional system for tracking properties, tenants, and finances. Features automated lease generation (PDF), dynamic reporting, and advanced security protocols.",
@@ -1031,6 +1308,9 @@
         "proj-5-title": "FirstMedical Store",
         "proj-5-text": "Professional Medical Equipment Store. Medical e‑commerce storefront with product sections and advanced management logic.",
         "projects-sub-2": "Frontend & Other Projects",
+        "proj-wp-badge": "WordPress Platform",
+        "proj-wp-title": "University Educational Platform Design & Development (WordPress Educational Platform)",
+        "proj-wp-text": "A complete educational platform website built with the Astra theme and Elementor page builder. Features a modern UI, smooth animations, interactive counters, and a contact form integrated with Google Maps.",
         "proj-6-badge": "Architecture UI",
         "proj-6-title": "Saudi Architectural Portfolio",
         "proj-6-text": "A specialized portfolio showcase for a Saudi Architect. Featuring modern design, elegant image galleries, and immersive 3D visualization embeds to showcase architectural works.",
@@ -1046,6 +1326,7 @@
         "proj-11-text": "Vanilla JS calculator supporting basic arithmetic and keyboard input with a clean UI.",
         "btn-view-live": "View Live",
         "btn-view-project": "View Project",
+        "btn-local-project": "Local Project",
         "contact-title": "Contact Me",
         "contact-subtitle": "Interested in working together? Let's talk about your next project.",
         "contact-btn-email": "Email Me",
@@ -1098,6 +1379,9 @@
         "skills-cat-3": "قواعد البيانات",
         "skills-cat-4": "الأدوات والتصميم",
         "projects-title": "أنظمة إدارة ومؤسسات SaaS",
+        "proj-coop-badge": "منصة ERP وتجـارة مميزة",
+        "proj-coop-title": "منصة رقمية متكاملة لجمعية تعاونية (ERP & E-Commerce)",
+        "proj-coop-text": "برمجة وتطوير منصة رقمية ضخمة تجمع بين متجر إلكتروني متطور، وبوابة خدمات ذاتية للمساهمين تشمل بطاقات رقمية ومحافظ أرباح، ولوحة تحكم إدارية شاملة لإدارة التشغيل اليومي والمبيعات. تم بناء النظام بالكامل من الصفر لضمان أعلى درجات الأداء والأمان.",
         "proj-1-badge": "SaaS عقارات",
         "proj-1-title": "نظام إدارة العقارات",
         "proj-1-text": "نظام احترافي لتتبع العقارات والمستأجرين والمالية. يتميز بتوليد عقود إيجار تلقائية (PDF)، وتقارير ديناميكية، وبروتوكولات أمان متقدمة.",
@@ -1119,6 +1403,9 @@
         "proj-5-title": "متجر فيرست ميديكال",
         "proj-5-text": "متجر معدات طبية احترافي. واجهة متجر طبية مع أقسام للمنتجات ومنطق إدارة متقدم.",
         "projects-sub-2": "الواجهة الأمامية ومشاريع أخرى",
+        "proj-wp-badge": "منصة ووردبريس",
+        "proj-wp-title": "تصميم وتطوير منصة تعليمية جامعية (WordPress Educational Platform)",
+        "proj-wp-text": "تصميم موقع تعريفي متكامل لمنصة تعليمية باستخدام قالب Astra وباني الصفحات Elementor. يحتوي الموقع على واجهة مستخدم عصرية، وتأثيرات حركية، وإحصائيات تفاعلية، ونموذج تواصل مدمج مع خرائط جوجل.",
         "proj-6-badge": "واجهة معمارية",
         "proj-6-title": "معرض أعمال هندسة معمارية سعودي",
         "proj-6-text": "معرض أعمال متخصص لمهندس معماري سعودي. يتميز بتصميم حديث، ومعارض صور أنيقة، وتضمين نماذج ثلاثية الأبعاد لعرض الأعمال المعمارية.",
@@ -1134,6 +1421,7 @@
         "proj-11-text": "حاسبة JavaScript تدعم العمليات الحسابية الأساسية والإدخال عبر لوحة المفاتيح مع واجهة نظيفة.",
         "btn-view-live": "عرض مباشر",
         "btn-view-project": "عرض المشروع",
+        "btn-local-project": "مشروع محلي",
         "contact-title": "اتصل بي",
         "contact-subtitle": "مهتم بالعمل معاً؟ لنناقش مشروعك القادم.",
         "contact-btn-email": "راسلني",
